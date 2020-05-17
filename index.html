@@ -63,7 +63,7 @@
                                         <a class="page-scroll" href="#service">Kompaniya haqida?</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#types">{{message}}</a>
+                                        <a class="page-scroll" href="#types">Hizmatlar</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#contact">Aloqa</a>
@@ -200,11 +200,11 @@
                             <img v-bind:src=`assets/images/${item.icon}` alt="flower">
                         </div>
                         <div class="pricing-header text-right">
-                            <h5 class="sub-title">{{item.name}}</h5>
+                            <h5 class="sub-title" @click=`getData(item)`>{{item.name}}</h5>
                             <p class="year">qayta ishlash</p>
                         </div>
                         <div class="pricing-btn text-right">
-                            <a class="main-btn" href="#">murojaat</a>
+                            <a data-toggle="modal" v-on:click="getData(item)" data-target="#exampleModal" class="main-btn" href="#">murojaat</a>
                         </div>
                     </div> <!-- single pricing -->
                 </div>
@@ -214,6 +214,40 @@
 
     <!--====== PRICING PART ENDS ======-->
     
+    <!--modal-->
+    <div class="modal fade"id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Tashkilotlar ro'yxati:</label>
+                  <select class="custom-select">
+                    <option selected>Korxonani tanlang</option>
+                    <option value="1">Company name 1</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Xabar:</label>
+                  <textarea rows="5" class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">yopish</button>
+              <button type="button" class="btn btn-primary">Jo'natish</button>
+            </div>
+          </div>
+        </div>
+      </div>
     
     <!--====== CONTACT PART START ======-->
 

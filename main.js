@@ -1,9 +1,3 @@
-var app = new Vue({ 
-    el: '#apps',
-    data: {
-        message: 'Hizmatlar'
-    }
-});
 
 var types = new Vue({ 
     el: '#types',
@@ -39,7 +33,18 @@ var types = new Vue({
             type: '2',
             icon: 'elektronika.png'
         }
-    ]
+    ],
+    murjat: {
+        title: '',
+        type: '',
+
+    }
     },
+    methods: {
+      getData: function(params) {
+           console.log(params)
+       }
+    }
+
 });
 
