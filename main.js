@@ -2,6 +2,10 @@
 var types = new Vue({ 
     el: '#types',
     data: {
+        modal: {
+            title: '',
+            name: ''
+        },
         message: 'Hello Vue!',
         categories: [{
             name: 'Shisha',
@@ -43,7 +47,11 @@ var types = new Vue({
     methods: {
       getData: function(params) {
            console.log(params)
+           this.modal.title = params.name
        }
+    },
+    created() {
+
     }
 
 });

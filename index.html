@@ -30,8 +30,7 @@
     <!--====== Style css ======-->
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -109,7 +108,7 @@
     <!--====== HEADER PART ENDS ======-->
 
     <!--====== SERVICES PART START ======-->
-
+<div id="types"> 
     <section id="service" class="services-area">
         <div class="container">
             <div class="row">
@@ -182,7 +181,7 @@
 
     <!--====== PRICING PART START ======-->
 
-    <section id="types">
+    <section >
         <div class="container container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -219,7 +218,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <h5 class="modal-title" id="exampleModalLabel">{{ modal.title }}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -227,6 +226,19 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Ismningiz</label>
+                  <input class="form-control" type="text" placeholder="To'liq ism sharif">
+                  <label for="recipient-name" class="col-form-label">Address</label>
+                  <input class="form-control" type="text" placeholder="Uy yoki ishxona manzili">
+                  <label for="recipient-name" class="col-form-label">Email</label>
+                  <input class="form-control" type="mail" placeholder="Email kirgazing">
+                  <label for="recipient-name" class="col-form-label">Joylashuv: <small>(shahar yoki viloyat nomini tanlang)</small></label>
+                  <select class="custom-select">
+                    <option selected>Viloyat</option>
+                    <option value="1">Company name 1</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                   <label for="recipient-name" class="col-form-label">Tashkilotlar ro'yxati:</label>
                   <select class="custom-select">
                     <option selected>Korxonani tanlang</option>
@@ -248,7 +260,7 @@
           </div>
         </div>
       </div>
-    
+    </div>
     <!--====== CONTACT PART START ======-->
 
     <section id="contact" class="contact-area">
@@ -396,8 +408,9 @@
 
 
 
-<script src="./main.js"></script>
-
+    <script src="./main.js"></script>
+    <script src="./services/Api.js"></script>
+    <script src="./services/Get.js"></script>
     <!--====== jquery js ======-->
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
